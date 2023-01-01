@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "title": "A* Pathfinding",
+      "description": "A pathfinding algorithm to find the shortest path between two connected points",
+      "image": "projects_data/img/a_star.png",
+      "url": "github link"
+    },
+    {
+      "title": "Game of Life",
+      "description": "John Conway's cell simulation, Conway's Game of Life",
+      "image": "projects_data/img/game_of_life.png",
+      "url": "github link"
+    },
+    {
+      "title": "Example Project 1",
+      "description": "...description...",
+      "image": "projects_data/img/project_image.png",
+      "url": "github link"
+    },
+    {
+      "title": "Example Project 2",
+      "description": "...description...",
+      "image": "projects_data/img/project_image.png",
+      "url": "github link"
+    }
+  ]
+}
