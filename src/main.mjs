@@ -31,16 +31,16 @@ for(let i = 0; i < 50; i++) {
   snowflakes.push(new Snowflake());
 }
 
-let before = 0;
-let elapsedTime = 0;
-let targetFPS = 1000/60;
-function update(now) {
-  elapsedTime += now - before;
-  while(elapsedTime >= targetFPS) {
-    elapsedTime -= targetFPS;
+let start = null;
+let elapsed = 0;
+let targetFPS = 60;
+function update(timestamp) {
+  elapsed += !start ? timestamp : timestamp - start;
+  if(elapsed >= 1000 / targetFPS) {
+    elapsed = 0;
     snowflakes.forEach(snowflake => snowflake.update());
   }
-  before = now;
+  start = timestamp;
   requestAnimationFrame(update);
 }
-update(0);
+requestAnimationFrame(update);

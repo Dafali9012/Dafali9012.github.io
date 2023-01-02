@@ -3,6 +3,7 @@ export default class Snowflake {
   constructor() {
     this.parent = document.querySelector("#snowflakes");
     this.element = document.createElement("div");
+    this.element.classList.add("snowflake");
     this.parent.appendChild(this.element);
 
     this.y = Math.random()*window.innerHeight;
@@ -21,17 +22,10 @@ export default class Snowflake {
   }
 
   updateElement() {
-    this.element.style.cssText = `
-    display: flex;
-    width: ${this.size}px;
-    aspect-ratio: 1;
-    position: absolute;
-    top: ${this.y}px;
-    left: ${this.x}px;
-    background: rgba(255,255,255,1);
-    border-radius: 50%;
-    opacity: ${this.opacity};
-  `;
+    this.element.style.width = `${this.size}px`;
+    this.element.style.top = `${this.y}px`;
+    this.element.style.left = `${this.x}px`;
+    this.element.style.opacity = `${this.opacity}`;
   }
 
   update() {
