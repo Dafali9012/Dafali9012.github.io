@@ -4,14 +4,17 @@ import Snowflake from "./templates/snowflake.mjs";
 console.log("hello portfolio");
 
 // generate project cards from data
+const cards = [];
 const projectData = await (await fetch("projects_data/projects.json")).json();
 projectData.projects.forEach(project => {
-  new Card({
-    title: project.title,
-    description: project.description,
-    image: project.image,
-    url: project.url
-  });
+  cards.push(
+    new Card({
+      title: project.title,
+      description: project.description,
+      image: project.image,
+      url: project.url
+    })
+  );
 });
 
 document.querySelectorAll(".card").forEach(card => {
@@ -39,6 +42,7 @@ function update(timestamp) {
   if(elapsed >= 1000 / targetFPS) {
     elapsed = 0;
     snowflakes.forEach(snowflake => snowflake.update());
+    cards.forEach(card => card.update());
   }
   start = timestamp;
   requestAnimationFrame(update);
