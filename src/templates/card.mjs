@@ -10,7 +10,7 @@ export default class Card {
 
     this.parent = document.querySelector("#projects");
     this.element = document.createElement("div");
-    this.element.classList.add("col-4", "card-container");
+    this.element.classList.add("col-lg-4", "col-12", "card-container");
     this.element.innerHTML = `
       <div class="card">
         <h2 class="card-header">${this.data.title}</h2>

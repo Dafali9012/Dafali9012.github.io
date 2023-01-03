@@ -27,6 +27,8 @@ body {
 }
 
 .card-container {
+  display: flex;
+  justify-content: center;
   position: relative;
   transition-property: transform, top, left;
   transition-duration: 0.6s;
